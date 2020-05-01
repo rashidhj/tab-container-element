@@ -20,7 +20,9 @@
     "build": "npm run build-umd && npm run build-esm && cp index.js.flow dist/index.esm.js.flow && cp index.js.flow dist/index.umd.js.flow",
     "pretest": "npm run build",
     "test": "karma start test/karma.config.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -41,5 +43,8 @@
   "eslintIgnore": [
     "dist/"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
